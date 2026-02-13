@@ -21,9 +21,9 @@ Example:
 
 ![Example](images/picture_intro.png)
 
-**Question:** Who is wearing glasses?\
-- Short answer: *Man*\
-- Sentence answer: *The man on left in the image is wearing glasses.*
+**Question:** Who is wearing glasses?
+- Short answer: *Man*
+- Sentence answer: *The man on left is wearing glasses.*
 
 ------------------------------------------------------------------------
 
@@ -34,9 +34,9 @@ Example:
 A sentence-based VQA dataset derived from TDIUC.
 
 -   Full-sentence answers generated using category-specific linguistic
-    rules\
--   Paraphrase augmentation using PEGASUS\
--   Grammar correction using Gramformer\
+    rules
+-   Paraphrase augmentation using PEGASUS
+-   Grammar correction using Gramformer
 -   Manual validation across categories (\~99% sampled accuracy)
 
 Supported categories include: - Object Presence - Counting - Color -
@@ -51,31 +51,31 @@ Three model configurations were benchmarked:
 
 #### 🔹 Baseline: FSVQA-R
 
--   ResNet-101 image encoder\
--   GloVe + LSTM question encoder\
+-   ResNet-101 image encoder
+-   GloVe + LSTM question encoder
 -   LSTM decoder for sentence generation
 
 #### 🔹 BUTD-SVQA (Proposed)
 
--   Bottom-Up Top-Down attention (Faster R-CNN + ResNet-101)\
--   Region-level attention over object proposals\
+-   Bottom-Up Top-Down attention (Faster R-CNN + ResNet-101)
+-   Region-level attention over object proposals
 -   Multi-task learning:
     -   Short-answer classification loss
     -   Sentence generation loss
 
 #### 🔹 BUTD-AoANet-SVQA (Final Model)
 
--   Attention-on-Attention (AoA) enhanced decoder\
--   Multi-head attention over image features\
+-   Attention-on-Attention (AoA) enhanced decoder
+-   Multi-head attention over image features
 -   Beam search decoding
 
 ------------------------------------------------------------------------
 
 ## 📊 Training Setup
 
--   Optimizer: Adam\
--   Epochs: 10\
--   Max sentence length: 14 tokens\
+-   Optimizer: Adam
+-   Epochs: 10
+-   Max sentence length: 14 tokens
 -   Evaluation Metrics:
     -   BLEU-1 / BLEU-4
     -   ROUGE-L
@@ -132,9 +132,9 @@ Total Loss = Classification Loss + Generation Loss
 
 ## 🔮 Future Work
 
--   Multi-relation attention across image, question, and answer tokens\
--   Transformer-based decoders\
--   Semantic consistency constraints\
+-   Multi-relation attention across image, question, and answer tokens
+-   Transformer-based decoders
+-   Semantic consistency constraints
 -   More diverse ground-truth sentence annotations
 
 ------------------------------------------------------------------------
@@ -165,7 +165,17 @@ series = {ICVGIP '23}
 
 ## 💡 Why This Project Matters
 
--   Moves VQA beyond classification\
--   Introduces structured dataset construction methodology\
--   Demonstrates benefits of multi-task learning\
+-   Moves VQA beyond classification
+-   Introduces structured dataset construction methodology
+-   Demonstrates benefits of multi-task learning
 -   Bridges vision-language modeling and natural language generation
+
+------------------------------------------------------------------------
+
+### 📄 Paper
+
+Pathak, S., Singh, G., Anand, A., & Guha, P. (2023).  
+**S-VQA: Sentence-Based Visual Question Answering.**  
+ICVGIP 2023 (ACM).  
+https://doi.org/10.1145/3627631.3627670
+
